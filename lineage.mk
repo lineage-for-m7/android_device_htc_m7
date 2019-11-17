@@ -1,5 +1,6 @@
-# Copyright (C) 2017 The LineageOS Project
+#
 # Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017-2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,14 +13,20 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-$(call inherit-product, device/htc/m7/full_m7.mk)
+# Inherit from m7 device
+$(call inherit-product, device/htc/m7/device.mk)
 
 # Inherit Lineage full phone configuration
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-# Device naming
+# Device identifier. This must come after all inclusions
 PRODUCT_NAME := lineage_m7
+PRODUCT_DEVICE := m7
+PRODUCT_BRAND := htc
+PRODUCT_MODEL := One
+PRODUCT_MANUFACTURER := HTC
 
 # Override build props
 PRODUCT_BUILD_PROP_OVERRIDES += \
